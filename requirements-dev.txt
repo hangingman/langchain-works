@@ -7,7 +7,9 @@
 black==24.3.0
     # via -r requirements-dev.in
 build==1.1.1
-    # via pip-tools
+    # via
+    #   -c requirements.txt
+    #   pip-tools
 click==8.1.7
     # via
     #   -c requirements.txt
@@ -33,10 +35,12 @@ mypy==1.9.0
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via
+    #   -c requirements.txt
     #   black
     #   mypy
-packaging==24.0
+packaging==23.2
     # via
+    #   -c requirements.txt
     #   black
     #   build
     #   pytest
@@ -54,6 +58,7 @@ pyflakes==3.2.0
     # via flake8
 pyproject-hooks==1.0.0
     # via
+    #   -c requirements.txt
     #   build
     #   pip-tools
 pysen==0.11.0
@@ -65,7 +70,9 @@ smmap==5.0.1
 tomlkit==0.12.4
     # via pysen
 typing-extensions==4.10.0
-    # via mypy
+    # via
+    #   -c requirements.txt
+    #   mypy
 unidiff==0.7.5
     # via pysen
 wheel==0.43.0
