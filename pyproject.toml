@@ -1,0 +1,38 @@
+[project]
+name = "mini_qa"
+version = "0.1.0"
+description = "Q&A on a embedding PoC"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+  { name = "hiroyuki.nagata", email="idiotpanzer@gmail.com" },
+]
+scripts = { mini_qa = "mini_qa.cli:cli" }  # CLI がいらないなら不要
+dynamic = [ "dependencies", "optional-dependencies" ]
+
+[build-system]
+requires = [ "setuptools>=60" ]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+dependencies = { file = [ "requirements.txt" ] }  # アプリの場合は "requirements.txt" のほうを指定
+optional-dependencies.dev = { file = [ "requirements-dev.txt" ] }
+
+[tool.pysen]
+version = "0.10"
+
+[tool.pysen.lint]
+enable_black = true
+enable_flake8 = true
+enable_isort = true
+enable_mypy = true
+mypy_preset = "strict"
+line_length = 120
+py_version = "py311"
+isort_known_first_party = ["mini_qa"]
+[[tool.pysen.lint.mypy_targets]]
+  paths = [
+    "mini_qa/",
+    "tests/",
+  ]
